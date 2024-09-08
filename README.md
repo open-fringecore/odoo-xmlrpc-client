@@ -1,4 +1,5 @@
-![GitHub License](https://img.shields.io/github/license/open-fringecore/odoo-xmlrpc-client)
+[![License](https://img.shields.io/github/license/open-fringecore/odoo-xmlrpc-client)](LICENSE)
+[![Version](https://img.shields.io/npm/v/odoo-xmlrpc-client)](https://www.npmjs.com/package/odoo-xmlrpc-client)
 
 # Odoo XML-RPC Client
 
@@ -12,7 +13,7 @@ This project provides a TypeScript client for interacting with Odoo's XML-RPC AP
 
 ## Installation
 
-To install the package, use npm or yarn:
+To install the package, use your favorite package manager. For example, with npm:
 
 ```sh
 npm i odoo-xmlrpc-client
@@ -52,5 +53,5 @@ async function main() {
 main();
 ```
 
-## Licens
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

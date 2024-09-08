@@ -55,6 +55,13 @@ export class OdooXMLRPC {
         })) as T;
     }
 
+    /**
+     * Authenticates the user with the provided credentials.
+     * This method must be called before any other method to ensure that the user is authenticated.
+     *
+     * @returns A Promise that resolves to the user ID (uid) upon successful authentication.
+     * @throws An Error with the message 'Invalid credentials' if the authentication fails.
+     */
     public async authenticate(): Promise<number> {
         const uid = await this.call<number>(
             'authenticate',
