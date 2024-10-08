@@ -7,9 +7,13 @@ This project provides a TypeScript client for interacting with Odoo's XML-RPC AP
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
+- [Odoo XML-RPC Client](#odoo-xml-rpc-client)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Create Row](#create-row)
+    - [Read Row](#read-row)
+  - [License](#license)
 
 ## Installation
 
@@ -20,7 +24,49 @@ npm i odoo-xmlrpc-client
 ```
 
 ## Usage
-Here's an example of how to use the Odoo XML-RPC client:
+Here are some examples of how to use the Odoo XML-RPC client:
+
+### Create Row
+```typescript
+import { OdooXMLRPC, OdooConfig } from 'odoo-xmlrpc-client';
+
+const config: OdooConfig = {
+    url: 'https://your-odoo-instance.com',
+    db: 'your-database',
+    username: 'your-username',
+    password: 'your-password',
+};
+
+const odoo = new OdooXMLRPC(config);
+
+async function main() {
+    try {
+        const uid = await odoo.authenticate();
+        console.log('Authenticated with UID:', uid);
+
+        const result = await odoo.execute_kw('res.partner', 'create', [{
+            'company_type': "person",
+            'name': '',
+            'street': '',
+            'street2': '',
+            'zip': '',
+            'city': '',
+            'country_id': 19,
+            'email': '',
+            'mobile': '',
+            'is_company': false,
+            'lang': "en_US",
+        }])
+        console.log('Result:', result);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+main();
+```
+
+### Read Row
 ```typescript
 import { OdooXMLRPC, OdooConfig } from 'odoo-xmlrpc-client';
 
