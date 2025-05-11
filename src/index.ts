@@ -15,7 +15,9 @@ export type OdooKWMethod =
     | 'read'
     | 'write'
     | 'create'
-    | 'unlink';
+    | 'unlink'
+    | 'button_confirm'
+    | 'button_validate';
 
 export class OdooXMLRPC {
     private config: OdooConfig;
