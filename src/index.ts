@@ -18,6 +18,8 @@ export type OdooKWMethod =
     | 'unlink'
     | 'button_confirm'
     | 'button_validate'
+    | 'button_unlock'
+    | 'button_done'
     | 'web_save';
 
 export class OdooXMLRPC {
